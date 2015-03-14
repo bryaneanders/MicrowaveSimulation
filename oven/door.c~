@@ -1,0 +1,20 @@
+// door.c
+
+
+// need stuff above this
+
+main() {
+
+	// user action
+	while(1) {
+		// door is open
+		if(openAction) {
+			// turn the light one
+			digitalWrite(22, ON);
+			
+			digitalWrite(18, OFF);
+		}
+	}
+
+	return 0;
+}

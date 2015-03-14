@@ -1,0 +1,15 @@
+
+main() {
+
+	while(1) {
+	
+		if(start) {
+			while(secs && !door) {
+				*sec -= 1;
+			}
+		}
+	
+	}
+
+	return(0);
+}

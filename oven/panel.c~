@@ -1,0 +1,32 @@
+/*******************************/
+/*   Panel                     */
+/*******************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+key_t key20, key21;
+int shmid;
+int *Door;
+int mode;
+
+main()
+{
+
+while(1) {
+ printf(" START button press  ..... -> 1\n");
+ printf(" STOP  button press  ..... -> 2\n");
+ printf(" TIMER seconds input  .... -> 3\n");
+ printf(" start button press  ..... -> 4\n");
+ scanf ("%d", &action);
+
+ if( action == 1) digitalWrite( startbuttonPin, 1); 
+   ....
+   ....
+ }
+
+}

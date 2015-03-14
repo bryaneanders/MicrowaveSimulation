@@ -1,0 +1,97 @@
+/* Each class is run in a seperate window and uses shared memory to communicate
+ *
+ * Need to hook up all the GPIO stuff and learn to allocate shm memory
+ * 
+ * Can make a test routine to catch setups we don't want
+ *
+ *
+ * ipcs command shows shared memory
+ */
+
+
+
+/*******************************/
+/*   sim oven hardware         */
+/*******************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/shm.h>
+
+key_t key20, key21;
+int shmid;
+int *Door, *Light;
+int mode;
+unsigned int i;
+
+wiringPiSetupGpio()
+{
+/* get this key by 'ipcs' command */
+    key20=   ; 
+    key21=   ; 
+
+    /* get shared variable (mem segment) */
+    if ((shmid20 = shmget(key, sizeof(int), 0644 )) == -1)
+    {   perror("shmget");
+        exit(1);
+    }
+   // ......
+ 
+   /* shared memori */
+   // shmat - shared memory attach
+   Door = shmat(shmid20, 0, 0);
+   Light = shmat(shmid21, 0, 0);
+   if( data20 == (int *)(-1) ) { 
+   		perror("shmat"); exit(1);
+   }
+
+
+   //......
+
+}
+
+
+
+pinMode( )
+{
+}
+
+
+pullUpDnControl(butPin, PUD_UP)
+{
+}
+
+
+int digitalRead(int pin)
+{
+  if(  pin == 20 )
+  {
+     return ( *Door );
+  }
+  .......
+
+  else
+   printf("Pin %d is not connected.\n");
+ 
+}
+
+
+
+digitalWrite(int pin, int value)
+{
+  if (pin == 21)
+  { 
+      *Light = value;
+  }
+  ...... 
+
+} 
+
+
+
+
+
+
